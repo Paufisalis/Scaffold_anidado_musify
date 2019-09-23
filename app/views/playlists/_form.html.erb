@@ -18,14 +18,12 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.select :user_id,  User.pluck(:name,:id), id: :new_user_id, prompt: "Seleccione categoría" %>
-
-    <%# <%= form.text_field :user_id %> %>
+    <%= form.select :user_id,  User.pluck(:name,:id), id: :new_user_id, prompt: "Seleccione usuario" %>
   </div>
 
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-info" %>
   </div>
 <% end %>

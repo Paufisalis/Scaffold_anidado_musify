@@ -25,7 +25,7 @@
 <ul>
 <li><%= song.artist %> |
 <%= song.name %> |
-<%= link_to 'eliminar',  playlist_delete_song_path(@playlist,song), method: :delete %></li>
+<%= link_to 'eliminar',  playlist_delete_song_path(@playlist,song), method: :delete, data:{confirm: 'La cancion se ha eliminado con exito'} %></li>
 </ul>
 <% end %>
 
