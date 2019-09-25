@@ -1,3 +1,6 @@
+<br>
+<br>
+<br>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -16,21 +19,23 @@
 <%= form_with(model: [@playlist,Song.new], local: true) do |f| %>
 <%= f.label :name %>
 <%= f.text_area :name %>
+
 <%= f.label :artist %>
 <%= f.text_area :artist %>
-<%= f.submit :enviar %>
+<%= f.submit :enviar, class:"btn btn-success" %>
 <% end %>
 
 <% @playlist.songs.each do |song| %>
 <ul>
 <li><%= song.artist %> |
 <%= song.name %> |
-<%= link_to 'eliminar',  playlist_delete_song_path(@playlist,song), method: :delete, data:{confirm: 'La cancion se ha eliminado con exito'} %></li>
+<%= link_to 'eliminar',  playlist_delete_song_path(@playlist,song), method: :delete, data:{confirm: 'La cancion se ha eliminado con exito'}, class:"btn btn-danger" %>
+</li>
 </ul>
 <% end %>
 
 
 
-
-<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
-<%= link_to 'Back', playlists_path %>
+<br>
+<%= link_to 'Edit', edit_playlist_path(@playlist), class:"btn btn-primary" %> |
+<%= link_to 'Back', playlists_path, class:"btn btn-dark" %>
